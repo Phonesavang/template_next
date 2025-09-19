@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "NotoSansLao";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/NotoSansLao-Regular.ttf");
+  unicode-range: U+0E80-0EFF;
+}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "NotoSansLao", "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+body {
+  font-family: "NotoSansLao", "Roboto", sans-serif;
+  font-weight: 400;
+}
+img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  /* box-shadow: inset 0 0 5px grey; */
+  background-color: #eee;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #b2c6d5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  display: none;
+}
+.swal2-confirm.custom-confirm-button-conf {
+  color: #fff !important;
+}
+.swal2-confirm.custom-confirm-button-cle {
+  color: #fff !important;
+}
+.custom-confirm-button-conf {
+  width: 160px;
+  height: 44px;
+  color: #fff;
+  border-radius: 16px;
+}
+.custom-confirm-button-cle {
+  width: 160px;
+  height: 44px;
+  color: #000;
+  border-radius: 16px;
+  background-color: transparent;
+  border: 2px solid #999;
+}
+.shadow-main {
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px !important;
+}
+.form-box-shadow {
+  box-shadow: 0 4px 18px 0 rgba(75, 70, 92, 0.1) !important;
+}
+.shadow-register {
+  box-shadow: 0 4px 18px 0 rgba(23, 23, 23, 0.1) !important;
+}
+.container-main {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.line-clamp-1,
+.line-clamp-3,
+.line-clamp-5,
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp-1 {
+  -webkit-line-clamp: 1;
+}
+.line-clamp-2 {
+  -webkit-line-clamp: 2;
+}
+.line-clamp-3 {
+  -webkit-line-clamp: 3;
+}
+.line-clamp-5 {
+  -webkit-line-clamp: 5;
+}
+.hover {
+  transition: all 0.3s ease-in-out !important;
+}
+.hover:hover {
+  transition: all 0.3s ease-in-out;
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+}
