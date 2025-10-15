@@ -1,6 +1,13 @@
 "use client";
-import "~/styles/globals.css";
-import { ConfigMui } from "./config_mui";
+import React from "react";
+import { CssBaseline } from "@mui/material";
+import "@/styles/globals.css";
+import { ThemeProvider } from "@mui/material/styles";
+import { exporterTheme } from "@/theme/index";
+import dynamic from "next/dynamic";
+const ClientOnly = dynamic(() => import("@/components/client-wrapper"), {
+  ssr: false,
+});
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -11,11 +18,14 @@ export default function RootLayout({
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" type="image/x-icon" href="/logo-fo.png" />
-        <title>MTS Exporter</title>
+        <link rel="icon" type="image/x-icon" href="/next.svg" />
+        <title>template</title>
       </head>
       <body>
-        <ConfigMui>{children}</ConfigMui>
+        <ClientOnly>
+          <CssBaseline />
+          <ThemeProvider theme={exporterTheme}>{children}</ThemeProvider>
+        </ClientOnly>
       </body>
     </html>
   );
